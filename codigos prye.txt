@@ -1,0 +1,74 @@
+import numpy as np
+
+# Simulación de una variable aleatoria discreta (lanzamiento de un dado)
+np.random.seed(42)
+variable_aleatoria = np.random.randint(1, 7, 100)  # 100 valores entre 1 y 6
+print(variable_aleatoria)
+
+
+
+from scipy.stats import bernoulli
+
+p = 0.3  # Probabilidad de éxito
+X = bernoulli.rvs(p, size=1000)  # 1000 muestras de la distribución de Bernoulli
+print(X)
+
+
+from scipy.stats import norm
+
+mu, sigma = 0, 1  # Media y desviación estándar
+X = norm.rvs(mu, sigma, size=1000)  # 1000 valores de una distribución normal
+print(X)
+
+def probabilidad_evento(datos, evento):
+    return datos.count(evento) / len(datos)
+
+datos = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+evento = 3
+print(f"Probabilidad de {evento}:", probabilidad_evento(datos, evento))
+
+
+def probabilidad_condicional(P_AyB, P_B):
+    return P_AyB / P_B if P_B > 0 else 0
+
+P_AyB = 0.2  # P(A ∩ B)
+P_B = 0.5    # P(B)
+print("P(A | B) =", probabilidad_condicional(P_AyB, P_B))
+
+
+import pandas as pd
+
+# Cargar el archivo CSV
+df = pd.read_csv("archivo.csv")
+
+# Convertir una columna en lista
+columna_lista = df["nombre_columna"].tolist()
+print(columna_lista)
+
+
+import matplotlib.pyplot as plt
+
+datos = [2, 3, 5, 7, 11, 2, 5, 6, 7, 7, 8, 9, 3, 4, 2, 8, 10]
+
+plt.hist(datos, bins=5, edgecolor="black", alpha=0.7)
+plt.xlabel("Valores")
+plt.ylabel("Frecuencia")
+plt.title("Histograma de Datos")
+plt.show()
+
+
+import seaborn as sns
+
+plt.figure(figsize=(6,4))
+sns.boxplot(data=datos)
+plt.title("Diagrama de Caja y Bigotes")
+plt.show()
+
+import numpy as np
+
+plt.figure(figsize=(6,4))
+sns.kdeplot(datos, fill=True, alpha=0.5)
+plt.xlabel("Valores")
+plt.ylabel("Densidad")
+plt.title("Densidad de Probabilidad (Área = 1)")
+plt.show()
