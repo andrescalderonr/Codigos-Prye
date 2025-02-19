@@ -59,32 +59,12 @@ def grafica_caja():
     plt.ylabel("Altura",fontsize = 12)
     plt.show()
 
-def edad():
-    edad = [18,20,20,19,20,21,18,21,18,19,20,20,21,22,23,19,19,19,19,19,22,20,21,19,19,22,20]
-    edad.sort()
-    sns.boxplot(y = edad)
-    plt.ylabel("Edad",fontsize = 12)
-    plt.show()
 
-def tiempo():
-    tiempo = [20  ,45 ,10 ,90 ,70 ,90 ,30 ,30 ,20 ,90 ,50 ,90 ,35 ,30 ,90 ,40 ,20 ,40 ,90 ,30 ,25,35 ,90 ,39 ,110 ,40 ,90]
-    tiempo.sort()
-    sns.boxplot( y = tiempo)
-    plt.ylabel("Tiempo de trayecto a la U (min)",fontsize = 12)
-    plt.show()
-
-def alturac():
+def histogrsms():
     altura = [1.54,1.55,1.58,1.75,1.75,1.87,1.73,1.84,1.79,1.78,1.83,1.70,1.65,1.69,1.59,1.68,1.64,1.69,1.57,1.74,1.75,1.75,1.65,1.54,1.61,1.74,1.56]
     altura.sort()
     sns.histplot(altura,stat="proportion")
     plt.xlabel("Altura",fontsize = 12)
-    plt.show()
-
-def trayecto():
-    tiempo = [20  ,45 ,10 ,90 ,70 ,90 ,30 ,30 ,20 ,90 ,50 ,90 ,35 ,30 ,90 ,40 ,20 ,40 ,90 ,30 ,25,35 ,90 ,39 ,110 ,40 ,90]
-    tiempo.sort()
-    sns.histplot(tiempo, stat="proportion")
-    plt.xlabel("Tiempo de trayecto a la U (min)",fontsize = 12)
     plt.show()
 
 def asimetria_curtosis():
